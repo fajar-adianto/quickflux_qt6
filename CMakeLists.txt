@@ -98,6 +98,29 @@ add_library(quickflux STATIC
   )
 add_library(QuickFlux::quickflux ALIAS quickflux)
 
+qt_add_qml_module(quickflux
+     URI QuickFlux
+     VERSION 1.1
+     SOURCES
+        src/qfactioncreator.h
+        src/QFAppDispatcher
+        src/qfapplistener.h
+        src/qfapplistenergroup.h
+        src/qfappscript.h
+        src/qfappdispatcher.h
+        src/qfappscriptgroup.h
+        src/qfdispatcher.h
+        src/qffilter.h
+        src/qfhydrate.h
+        src/QFKeyTable
+        src/qfkeytable.h
+        src/qfmiddleware.h
+        src/qfmiddlewarelist.h
+        src/qfobject.h
+        src/qfstore.h
+        src/QuickFlux
+)
+
 target_link_libraries(quickflux
   PUBLIC
   Qt${QT_VERSION_MAJOR}::Qml
