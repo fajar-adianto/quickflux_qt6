@@ -4,11 +4,7 @@
 #
 
 cmake_minimum_required(VERSION 3.16)
-project(quickflux VERSION 1.1.3 LANGUAGES CXX)
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(QT_QML_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR})
+project(quickflux VERSION 1.1.3)
 
 option(quickflux_INSTALL "Enable the installation of targets." ON)
 
@@ -101,48 +97,6 @@ add_library(quickflux STATIC
   ${moc}
   )
 add_library(QuickFlux::quickflux ALIAS quickflux)
-
-qt_add_qml_module(quickflux
-     URI QuickFlux
-     VERSION 1.1
-     SOURCES
-        src/qfactioncreator.cpp
-        src/qfactioncreator.h
-        src/qfappdispatcher.cpp
-        src/qfappdispatcher.h
-        src/qfapplistener.cpp
-        src/qfapplistener.h
-        src/qfapplistenergroup.cpp
-        src/qfapplistenergroup.h
-        src/qfappscript.cpp
-        src/qfappscript.h
-        src/qfappscriptgroup.cpp
-        src/qfappscriptgroup.h
-        src/qfappscriptrunnable.cpp
-        src/qfdispatcher.cpp
-        src/qfdispatcher.h
-        src/qffilter.cpp
-        src/qffilter.h
-        src/qfhydrate.cpp
-        src/qfhydrate.h
-        src/qfkeytable.cpp
-        src/qfkeytable.h
-        src/qfmiddleware.cpp
-        src/qfmiddleware.h
-        src/qfmiddlewarelist.cpp
-        src/qfmiddlewarelist.h
-        src/qfobject.cpp
-        src/qfobject.h
-        src/qfstore.cpp
-        src/qfstore.h
-        src/qfqmltypes.cpp
-        src/qfappscriptdispatcherwrapper.cpp
-        src/qflistener.cpp        
-    RESOURCES
-        src/QFAppDispatcher
-        src/QFKeyTable
-        src/QuickFlux
-)
 
 target_link_libraries(quickflux
   PUBLIC
