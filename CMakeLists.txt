@@ -98,6 +98,13 @@ add_library(quickflux STATIC
   )
 add_library(QuickFlux::quickflux ALIAS quickflux)
 
+qt_add_qml_module(quickflux
+     URI QuickFlux
+     VERSION 1.1
+     SOURCES
+         quickflux_PUBLIC_HEADERS
+)
+
 target_link_libraries(quickflux
   PUBLIC
   Qt${QT_VERSION_MAJOR}::Qml
