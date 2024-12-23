@@ -102,7 +102,23 @@ qt_add_qml_module(quickflux
      URI QuickFlux
      VERSION 1.1
      SOURCES
-         quickflux_PUBLIC_HEADERS
+        src/qfactioncreator.h
+        src/QFAppDispatcher
+        src/qfapplistener.h
+        src/qfapplistenergroup.h
+        src/qfappscript.h
+        src/qfappdispatcher.h
+        src/qfappscriptgroup.h
+        src/qfdispatcher.h
+        src/qffilter.h
+        src/qfhydrate.h
+        src/QFKeyTable
+        src/qfkeytable.h
+        src/qfmiddleware.h
+        src/qfmiddlewarelist.h
+        src/qfobject.h
+        src/qfstore.h
+        src/QuickFlux
 )
 
 target_link_libraries(quickflux
