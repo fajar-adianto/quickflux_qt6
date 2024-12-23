@@ -3,8 +3,12 @@
 # See examples/middleware for example
 #
 
-cmake_minimum_required(VERSION 3.0.0)
-project(quickflux VERSION 1.1.3)
+cmake_minimum_required(VERSION 3.16)
+project(quickflux VERSION 1.1.3 LANGUAGES CXX)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(QT_QML_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR})
 
 option(quickflux_INSTALL "Enable the installation of targets." ON)
 
@@ -102,23 +106,42 @@ qt_add_qml_module(quickflux
      URI QuickFlux
      VERSION 1.1
      SOURCES
-        src/qfactioncreator.h
-        src/QFAppDispatcher
-        src/qfapplistener.h
-        src/qfapplistenergroup.h
-        src/qfappscript.h
-        src/qfappdispatcher.h
-        src/qfappscriptgroup.h
-        src/qfdispatcher.h
-        src/qffilter.h
-        src/qfhydrate.h
-        src/QFKeyTable
-        src/qfkeytable.h
-        src/qfmiddleware.h
-        src/qfmiddlewarelist.h
-        src/qfobject.h
-        src/qfstore.h
-        src/QuickFlux
+        ${SRC_DIR}/qfactioncreator.cpp
+        ${SRC_DIR}/qfactioncreator.h
+        ${SRC_DIR}/qfappdispatcher.cpp
+        ${SRC_DIR}/qfappdispatcher.h
+        ${SRC_DIR}/qfapplistener.cpp
+        ${SRC_DIR}/qfapplistener.h
+        ${SRC_DIR}/qfapplistenergroup.cpp
+        ${SRC_DIR}/qfapplistenergroup.h
+        ${SRC_DIR}/qfappscript.cpp
+        ${SRC_DIR}/qfappscript.h
+        ${SRC_DIR}/qfappscriptgroup.cpp
+        ${SRC_DIR}/qfappscriptgroup.h
+        ${SRC_DIR}/qfappscriptrunnable.cpp
+        ${SRC_DIR}/qfdispatcher.cpp
+        ${SRC_DIR}/qfdispatcher.h
+        ${SRC_DIR}/qffilter.cpp
+        ${SRC_DIR}/qffilter.h
+        ${SRC_DIR}/qfhydrate.cpp
+        ${SRC_DIR}/qfhydrate.h
+        ${SRC_DIR}/qfkeytable.cpp
+        ${SRC_DIR}/qfkeytable.h
+        ${SRC_DIR}/qfmiddleware.cpp
+        ${SRC_DIR}/qfmiddleware.h
+        ${SRC_DIR}/qfmiddlewarelist.cpp
+        ${SRC_DIR}/qfmiddlewarelist.h
+        ${SRC_DIR}/qfobject.cpp
+        ${SRC_DIR}/qfobject.h
+        ${SRC_DIR}/qfstore.cpp
+        ${SRC_DIR}/qfstore.h
+        ${SRC_DIR}/qfqmltypes.cpp
+        ${SRC_DIR}/qfappscriptdispatcherwrapper.cpp
+        ${SRC_DIR}/qflistener.cpp        
+    RESOURCES
+        ${SRC_DIR}/QFAppDispatcher
+        ${SRC_DIR}/QFKeyTable
+        ${SRC_DIR}/QuickFlux
 )
 
 target_link_libraries(quickflux
